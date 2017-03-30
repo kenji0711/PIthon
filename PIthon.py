@@ -32,20 +32,20 @@ for event in recorded:
 
 #plotValues
 plotvalues = pt.PlotValues(timerange, 100)
-print('\nShowing PI Tag PlotValues from'.format(name))
+print('\nShowing PI Tag PlotValues from {0}'.format(name))
 for event in plotvalues:
     print('{0} value: {1}'.format(event.Timestamp.LocalTime, event.Value))
 
 #interpolatedvalues
 span = AFTimeSpan.Parse("1h")
 interpolated = pt.InterpolatedValues(timerange, span, "", False)
-print('\nShowing PI Tag InterpolatedValues from'.format(name))
+print('\nShowing PI Tag InterpolatedValues from {0}'.format(name))
 for val in interpolated:
     print('{0} value: {1}'.format(event.Timestamp.LocalTime, event.Value))
 
 #summariesvalues
 summaries = pt.Summaries(timerange, span, AFSummaryTypes.Average, AFCalculationBasis.TimeWeighted, AFTimestampCalculation.Auto)
-print('\nShowing PI Tag SummariesValues(Average) from'.format(name))
+print('\nShowing PI Tag SummariesValues(Average) from {0}'.format(name))
 for summary in summaries:
     for event in summary.Value:
         print('{0} value: {1}'.format(event.Timestamp.LocalTime, event.Value))
