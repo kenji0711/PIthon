@@ -40,7 +40,7 @@ for event in plotvalues:
 span = AFTimeSpan.Parse("1h")
 interpolated = pt.InterpolatedValues(timerange, span, "", False)
 print('\nShowing PI Tag InterpolatedValues from {0}'.format(name))
-for val in interpolated:
+for event in interpolated:
     print('{0} value: {1}'.format(event.Timestamp.LocalTime, event.Value))
 
 #summariesvalues
